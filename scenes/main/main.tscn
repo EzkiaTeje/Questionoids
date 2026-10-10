@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://3vfnkd5ytq2j"]
 
-[ext_resource type="Texture2D" uid="uid://chbecm274g2ng" path="res://assets/art/wallpaper/wallpaper.jpg" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://btkt2mkdg1ngd" path="res://scenes/starfield/starfield.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://dfrswvdsxum1p" path="res://scenes/ship/ship.tscn" id="2_iuonh"]
 
 [node name="Main" type="Node2D" unique_id=1355057553]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1808351907]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_hyk8p")
+[node name="Starfield" parent="." unique_id=535477731 instance=ExtResource("1_iuonh")]
 
 [node name="Ship" parent="." unique_id=192598870 instance=ExtResource("2_iuonh")]
 position = Vector2(367, 391)
