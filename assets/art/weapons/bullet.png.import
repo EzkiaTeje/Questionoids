@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://12vqaqev0uq"
-path="res://.godot/imported/questionoids.png-0bb48044da32876190e92962ee2ae0c7.ctex"
+uid="uid://df2j66dvhrbgq"
+path="res://.godot/imported/bullet.png-3b5782f9f8299dff627b0648310c4771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://questionoids.png"
-dest_files=["res://.godot/imported/questionoids.png-0bb48044da32876190e92962ee2ae0c7.ctex"]
+source_file="res://assets/art/weapons/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-3b5782f9f8299dff627b0648310c4771.ctex"]
 
 [params]
 

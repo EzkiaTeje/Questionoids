@@ -2,10 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://btkt2mkdg1ngd" path="res://scenes/starfield/starfield.tscn" id="1_iuonh"]
 [ext_resource type="PackedScene" uid="uid://dfrswvdsxum1p" path="res://scenes/ship/ship.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://bg101svb36yc1" path="res://scenes/camera/camera.tscn" id="3_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://dgig46c054iue" path="res://scenes/starbase/starbase.tscn" id="5_6q06x"]
 
 [node name="Main" type="Node2D" unique_id=1355057553]
 
-[node name="Starfield" parent="." unique_id=535477731 instance=ExtResource("1_iuonh")]
+[node name="Starfield" parent="." unique_id=535477731 node_paths=PackedStringArray("camera") instance=ExtResource("1_iuonh")]
+camera = NodePath("../Ship/Camera")
 
-[node name="Ship" parent="." unique_id=192598870 instance=ExtResource("2_iuonh")]
-position = Vector2(367, 391)
+[node name="Ship" parent="." unique_id=192598870 node_paths=PackedStringArray("camera") instance=ExtResource("2_iuonh")]
+position = Vector2(500, 0)
+camera = NodePath("Camera")
+
+[node name="Camera" parent="Ship" unique_id=611185409 instance=ExtResource("3_l3cfh")]
+
+[node name="Starbase" parent="." unique_id=1180460296 instance=ExtResource("5_6q06x")]

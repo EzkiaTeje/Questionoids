@@ -14,10 +14,15 @@ config/name="04-questionoids"
 run/main_scene="uid://3vfnkd5ytq2j"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+GameManager="*uid://cc8i151u2g614"
+
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -67,6 +72,7 @@ shoot={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

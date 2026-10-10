@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cca3a1ki1amgp"]
+
+[ext_resource type="Script" uid="uid://ctf5ot4evlydr" path="res://scenes/asteroid/asteroid.gd" id="1_phgi8"]
+
+[node name="Asteroid" type="Area2D" unique_id=608852345]
+z_index = 10
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_phgi8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=211646825]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

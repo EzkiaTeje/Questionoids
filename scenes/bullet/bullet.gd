@@ -7,6 +7,8 @@ var direction := Vector2.UP
 
 
 func _ready() -> void:
+	add_to_group("weapons")
+	
 	rotation = direction.angle() + PI / 2.0
 
 

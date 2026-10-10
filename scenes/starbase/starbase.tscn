@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dgig46c054iue"]
+
+[ext_resource type="Texture2D" uid="uid://bohr1htwqaufn" path="res://assets/art/ships/engine_1.png" id="1_u3c1g"]
+
+[node name="Starbase" type="Area2D" unique_id=1180460296]
+z_index = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1843725477]
+scale = Vector2(100, 100)
+texture = ExtResource("1_u3c1g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1286616275]
