@@ -48,10 +48,13 @@ func _check_ship_movement(delta: float) -> void:
 		if Input.is_action_pressed("accelerate"):
 			var acceleration := engine_acceleration / mass
 			velocity += forward * acceleration * delta
-			$AnimatedSprite2DEngine.play("accelerate")
+			$AnimatedSprite2DEngine1.play("accelerate")
+			$AnimatedSprite2DEngine2.play("accelerate")
 		else:
-			$AnimatedSprite2DEngine.stop()
-			$AnimatedSprite2DEngine.frame = 0
+			$AnimatedSprite2DEngine1.stop()
+			$AnimatedSprite2DEngine2.stop()
+			$AnimatedSprite2DEngine1.frame = 0
+			$AnimatedSprite2DEngine2.frame = 0
 
 		# Frenar
 		if Input.is_action_pressed("brake"):
@@ -95,7 +98,8 @@ func destroy_ship() -> void:
 
 	set_deferred("collision_layer", 0)
 	set_deferred("collision_mask", 0)
-	$AnimatedSprite2DEngine.visible = false
+	$AnimatedSprite2DEngine1.visible = false
+	$AnimatedSprite2DEngine2.visible = false
 	$AnimatedSprite2DShip.play("destroy")
 
 

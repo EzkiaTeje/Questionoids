@@ -20,9 +20,8 @@ GameManager="*uid://cc8i151u2g614"
 
 [display]
 
-window/size/viewport_width=2560
-window/size/viewport_height=1440
-window/size/mode=4
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -65,6 +64,7 @@ shoot={
 2d_physics/layer_2="bullet"
 2d_physics/layer_3="asteroid"
 2d_physics/layer_4="station"
+2d_physics/layer_5="landing pad"
 
 [physics]
 

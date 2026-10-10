@@ -28,9 +28,17 @@ enum AsteroidLevel { SMALL, MEDIUM, BIG, HUGE }
 @export var level: AsteroidLevel = AsteroidLevel.BIG
 const ASTEROID_SCENE: PackedScene = preload("res://scenes/asteroid/asteroid.tscn")
 
+# Despawn a distancia de la nave
+@export var despawn_distance := 8000.0
+
+var ship: Node2D
+
 
 func _ready() -> void:
 	add_to_group("asteroids")
+	
+	var main := get_tree().current_scene
+	ship = main.get_node_or_null("Ship")
 	
 	# Dirección aleatoria fija para que se mueva en línea recta.
 	direction = Vector2.RIGHT.rotated(randf_range(0.0, TAU))
@@ -60,6 +68,14 @@ func _physics_process(delta: float) -> void:
 	
 	# Rotar el asteroide
 	rotation += rotation_speed * delta
+	
+	if not is_instance_valid(ship):
+		return
+		
+	# Destruir si está demasiado lejos de la nave.
+	if global_position.distance_to(ship.global_position) > despawn_distance:
+		queue_free()
+		return
 
 
 func _generate_shape(radius: float, points: float) -> void:

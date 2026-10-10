@@ -11,7 +11,8 @@
 camera = NodePath("../Ship/Camera")
 
 [node name="Ship" parent="." unique_id=192598870 node_paths=PackedStringArray("camera") instance=ExtResource("2_iuonh")]
-position = Vector2(500, 0)
+position = Vector2(324, 163)
+rotation = 3.1415927
 camera = NodePath("Camera")
 
 [node name="Camera" parent="Ship" unique_id=611185409 instance=ExtResource("3_l3cfh")]

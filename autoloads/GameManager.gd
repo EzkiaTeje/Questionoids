@@ -3,10 +3,10 @@ extends Node
 # Spawn de asteroides
 const ASTEROID_SCENE := preload("res://scenes/asteroid/asteroid.tscn")
 
-@export var spawn_interval := 0.5
-@export var min_center_distance := 4000.0
+@export var spawn_interval := 0.1
+@export var min_starbase_distance := 4000.0
 @export var min_ship_distance := 4000.0
-@export var max_spawn_distance := 8000.0
+@export var max_ship_distance := 8000.0
 @export var max_asteroids := 50
 
 var spawn_timer := 0.0
@@ -26,8 +26,7 @@ func _spawn_asteroid() -> void:
 
 	var main := get_tree().current_scene
 	var ship := main.get_node_or_null("Ship")
-	print(main)
-	print(ship)
+	var starbase := main.get_node_or_null("Starbase")
 
 	if ship == null:
 		return
@@ -37,11 +36,11 @@ func _spawn_asteroid() -> void:
 
 	for i in range(100):
 		var angle := randf_range(0.0, TAU)
-		var distance := randf_range(min_center_distance, max_spawn_distance)
+		var distance := randf_range(min_ship_distance, max_ship_distance)
 
-		var candidate := Vector2.RIGHT.rotated(angle) * distance
+		var candidate: Vector2 = ship.global_position + Vector2.RIGHT.rotated(angle) * distance
 
-		if candidate.distance_to(ship.global_position) >= min_ship_distance:
+		if candidate.distance_to(starbase.global_position) >= min_starbase_distance:
 			spawn_position = candidate
 			valid_position = true
 			break
