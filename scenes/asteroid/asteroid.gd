@@ -2,7 +2,6 @@ extends Area2D
 
 # Movimiento y rotación del asteroide
 @export var speed := 100.0
-@export var lifetime := 120.0
 @export var rotation_speed := 0.5
 
 var direction := Vector2.ZERO
@@ -56,10 +55,6 @@ func _ready() -> void:
 
 	collision_polygon.set_deferred("polygon", polygon_points)
 	queue_redraw()
-	
-	# Destruir el asteroide cuando termine su vida útil.
-	await get_tree().create_timer(lifetime).timeout
-	queue_free()
 
 
 func _physics_process(delta: float) -> void:
@@ -101,19 +96,16 @@ func _draw() -> void:
 
 
 func _destroy_asteroid() -> void:
-	print("hit")
 	if level == AsteroidLevel.SMALL:
+		GameManager.add_inventory_score()
 		queue_free()
 		return
 
-	var next_level := level - 1
-
 	for i in range(3):
 		var asteroid = ASTEROID_SCENE.instantiate()
-		asteroid.level = next_level
-
-		get_parent().add_child(asteroid)
+		asteroid.level = level - 1
 		asteroid.global_position = global_position
+		get_parent().add_child.call_deferred(asteroid)
 
 	queue_free()
 

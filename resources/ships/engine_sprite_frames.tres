@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://yk8l4uut0o0t"]
+
+[ext_resource type="Texture2D" uid="uid://dioa8lfa762l4" path="res://assets/art/ships/engine_0.png" id="1_c2j8l"]
+[ext_resource type="Texture2D" uid="uid://bohr1htwqaufn" path="res://assets/art/ships/engine_1.png" id="2_xfhqo"]
+[ext_resource type="Texture2D" uid="uid://6rxxqs1ue78k" path="res://assets/art/ships/engine_2.png" id="3_72gx6"]
+[ext_resource type="Texture2D" uid="uid://d3jnocsfwjqhe" path="res://assets/art/ships/engine_3.png" id="4_4aqjd"]
+[ext_resource type="Texture2D" uid="uid://bc16nfyyv2hgi" path="res://assets/art/ships/engine_4.png" id="5_tylii"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2j8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xfhqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_72gx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4aqjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tylii")
+}],
+"loop": 1,
+"name": &"accelerate",
+"speed": 30.0
+}]

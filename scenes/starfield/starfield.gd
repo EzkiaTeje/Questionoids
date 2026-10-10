@@ -18,7 +18,7 @@ func _draw() -> void:
 		return
 
 	var viewport_size := get_viewport_rect().size
-	var half_size := viewport_size * 0.5 * active_camera.zoom
+	var half_size := viewport_size * 0.5
 
 	var top_left := active_camera.global_position - half_size
 	var bottom_right := active_camera.global_position + half_size

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfrswvdsxum1p" path="res://scenes/ship/ship.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://bg101svb36yc1" path="res://scenes/camera/camera.tscn" id="3_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://dgig46c054iue" path="res://scenes/starbase/starbase.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://bft6ddxgfepx8" path="res://scenes/ui/ui.tscn" id="5_ow5a4"]
 
 [node name="Main" type="Node2D" unique_id=1355057553]
 
@@ -18,3 +19,7 @@ camera = NodePath("Camera")
 [node name="Camera" parent="Ship" unique_id=611185409 instance=ExtResource("3_l3cfh")]
 
 [node name="Starbase" parent="." unique_id=1180460296 instance=ExtResource("5_6q06x")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=426673352]
+
+[node name="Ui" parent="CanvasLayer" unique_id=940004350 instance=ExtResource("5_ow5a4")]

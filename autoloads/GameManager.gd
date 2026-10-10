@@ -1,15 +1,22 @@
 extends Node
 
+signal inventory_score_updated(new_score: int)
+signal total_score_updated(new_score: int)
+
 # Spawn de asteroides
 const ASTEROID_SCENE := preload("res://scenes/asteroid/asteroid.tscn")
 
 @export var spawn_interval := 0.1
-@export var min_starbase_distance := 4000.0
+@export var min_starbase_distance := 10000.0
 @export var min_ship_distance := 4000.0
 @export var max_ship_distance := 8000.0
 @export var max_asteroids := 50
 
 var spawn_timer := 0.0
+
+# Contador de puntuación
+var inventory_score := 0
+var total_score := 0
 
 
 func _process(delta: float) -> void:
@@ -55,3 +62,15 @@ func _spawn_asteroid() -> void:
 
 	main.add_child(asteroid)
 	asteroid.global_position = spawn_position
+
+
+func add_inventory_score() -> void:
+	inventory_score += randi_range(15, 30)
+	inventory_score_updated.emit(inventory_score)
+
+
+func add_total_score() -> void:
+	total_score += inventory_score
+	inventory_score = 0
+	inventory_score_updated.emit(inventory_score)
+	total_score_updated.emit(total_score)

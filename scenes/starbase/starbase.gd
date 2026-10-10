@@ -8,4 +8,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_landing_pad_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ships"):
-		print("Landing granted.")
+		GameManager.add_total_score()

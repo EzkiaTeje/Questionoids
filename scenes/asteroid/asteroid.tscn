@@ -7,13 +7,9 @@ z_index = 10
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_phgi8")
-speed = null
-lifetime = null
-rotation_speed = null
-level = null
-despawn_distance = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=211646825]
+polygon = PackedVector2Array(1, 1, 1, -1, -1, -1, -1, 1)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
