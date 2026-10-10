@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dfrswvdsxum1p"]
+
+[ext_resource type="Texture2D" uid="uid://cnoxxvep1vjnq" path="res://assets/art/ships/ship.png" id="1_ccv4y"]
+[ext_resource type="Script" uid="uid://b4yc7fxijenra" path="res://scenes/ship/ship.gd" id="1_u5c2e"]
+[ext_resource type="Texture2D" uid="uid://dioa8lfa762l4" path="res://assets/art/ships/engine_0.png" id="3_c54or"]
+[ext_resource type="Texture2D" uid="uid://bohr1htwqaufn" path="res://assets/art/ships/engine_1.png" id="4_dh1m8"]
+[ext_resource type="Texture2D" uid="uid://6rxxqs1ue78k" path="res://assets/art/ships/engine_2.png" id="5_7nsyl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5in0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c54or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dh1m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7nsyl")
+}],
+"loop": 1,
+"name": &"accelerate",
+"speed": 15.0
+}]
+
+[node name="Ship" type="CharacterBody2D" unique_id=192598870]
+script = ExtResource("1_u5c2e")
+
+[node name="Sprite2DShip" type="Sprite2D" parent="." unique_id=1349709883]
+rotation = -1.5707964
+texture = ExtResource("1_ccv4y")
+
+[node name="AnimatedSprite2DEngine" type="AnimatedSprite2D" parent="." unique_id=421700075]
+position = Vector2(0, 36)
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_o5in0")
+animation = &"accelerate"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2063295984]
+rotation = -1.5707964
+polygon = PackedVector2Array(32, -1.9999986, 32, 2.0000014, 31, 2.0000014, 31, 3.0000014, 30, 3.0000014, 30, 4.0000014, 29, 4.0000014, 29, 5.0000014, 28, 5.0000014, 28, 6.0000014, 27, 6.000001, 27, 7.000001, 26, 7.000001, 26, 8.000001, 25, 8.000001, 25, 9.000001, 23, 9.000001, 23, 10.000001, 20, 10.000001, 20, 11.000001, 15.999999, 11.000001, 15.999999, 12.000001, 13.999999, 12.000001, 13.999999, 13.000001, 9.999999, 13, 9.999999, 12, 7.9999995, 12, 7.9999995, 11, 5.9999995, 11, 5.9999995, 12, -5.2453663e-07, 12, -5.68248e-07, 13, -6.0000005, 13, -6.0000005, 14, -8.000001, 14, -8.000001, 15, -10.000001, 15, -10.000001, 16, -12.000001, 15.999999, -12.000001, 17, -14.000001, 17, -14.000001, 18, -18, 18, -18, 17, -22, 16.999998, -22, 15.999999, -26, 15.999999, -26, 14.999999, -30, 14.999999, -30, 9.999999, -31, 9.999999, -31, 4.9999986, -32, 4.9999986, -32, -5.0000014, -31, -5.0000014, -31, -10.000001, -30, -10.000001, -30, -15.000001, -26, -15.000001, -26, -16.000002, -22, -16.000002, -22, -17.000002, -18, -17, -18, -18, -13.999999, -18, -13.999999, -17, -11.999999, -17, -11.999999, -16, -9.999999, -16, -9.999999, -15, -7.9999995, -15, -7.9999995, -14, -5.9999995, -14, -5.9999995, -13, 5.68248e-07, -13, 5.2453663e-07, -12, 6.0000005, -12, 6.0000005, -11, 8.000001, -11, 8.000001, -12, 10.000001, -12, 10.000001, -13, 14.000001, -12.999999, 14.000001, -11.999999, 16, -11.999999, 16, -10.999999, 20, -10.999999, 20, -9.999999, 23, -9.999999, 23, -8.999999, 25, -8.999999, 25, -7.999999, 26, -7.999999, 26, -6.999999, 27, -6.999999, 27, -5.999999, 28, -5.9999986, 28, -4.9999986, 29, -4.9999986, 29, -3.9999988, 30, -3.9999986, 30, -2.9999986, 31, -2.9999986, 31, -1.9999987)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=822683773]
